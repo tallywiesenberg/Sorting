@@ -1,11 +1,11 @@
 def insert_sort(nums):
     for i in range(1, len(nums)):
-        temp = num[i]
+        temp = nums[i]
         j = i
-        while j > 0 and temp < num[j-i]:
-            num[j] = num[j-1]
+        while j > 0 and temp < nums[j-i]:
+            nums[j] = nums[j-1]
             j -= 1
-        num[j] = temp
+        nums[j] = temp
     
     return nums
 
