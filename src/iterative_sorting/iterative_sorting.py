@@ -35,14 +35,14 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
+    swapped = False
     for i in range(0, len(arr) - 1):
-        swapped = True
-        while swapped:
+        while not swapped:
             if arr[i] > arr[i+1]:
                 temp = arr[i]
                 arr[i] = arr[i+1]
                 arr[i+1] = temp
-                swapped = False
+                swapped = True
     return arr
 
 
