@@ -9,15 +9,14 @@ def merge( arrA, arrB ):
 def divide(arr):
     #divide array into nested array of single-sorted elements
     # length = len(arr)
-    nest = []
-    if len(nest) != len(arr):
+    if len(arr) > 1:
         half1 = arr[:len(arr)//2]
         half2 = arr[len(arr)//2:]
-        nest.append(half1)
-        nest.append(half2)
-        divide(nest)
-        # nest = nest[:len(nest)//2]
-    return nest
+        arr.append(half1)
+        arr.append(half2)
+        arr = arr[:len(arr)//2]
+        divide(arr)
+    return arr
     # if length >1:
     #     half1 = arr[:length//2]
     #     half2 = arr[length//2:]
