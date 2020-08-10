@@ -1,3 +1,15 @@
+def insert_sort(nums):
+    for i in range(1, len(nums)):
+        temp = nums[i]
+        j = i
+        while j > 0 and temp < nums[j-i]:
+            nums[j] = nums[j-1]
+            j -= 1
+        nums[j] = temp
+    
+    return nums
+
+
 # TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ):
     # loop through n-1 elements
@@ -6,11 +18,14 @@ def selection_sort( arr ):
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc) 
-             
-
-
+        for j in range(smallest_index, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
 
         # TO-DO: swap
+        temp = arr[cur_index]
+        arr[cur_index] = arr[smallest_index]
+        arr[smallest_index] = temp
 
 
 
@@ -20,7 +35,14 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-
+    swapped = False
+    for i in range(0, len(arr) - 1):
+        while not swapped:
+            if arr[i] > arr[i+1]:
+                temp = arr[i]
+                arr[i] = arr[i+1]
+                arr[i+1] = temp
+                swapped = True
     return arr
 
 
